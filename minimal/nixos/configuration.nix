@@ -19,7 +19,7 @@
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
     ./environment.nix
-    ./zsh.nix
+    # ./zsh.nix
     # ./modules/t460s/environment.nix
   ];
 
