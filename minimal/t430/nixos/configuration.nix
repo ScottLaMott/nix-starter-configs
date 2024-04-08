@@ -1,3 +1,5 @@
+#---------------------------------------------------
+#---
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 {
@@ -73,6 +75,12 @@
     efi.canTouchEfiVariables = true;
     efi.efiSysMountPoint = "/boot/efi";
   };
+  
+  system = {
+    # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+    stateVersion = "23.11";
+  };
+
   #--- workaround nach upgrade auf 23.05
   nixpkgs.config = {
     permittedInsecurePackages = [
@@ -81,7 +89,12 @@
   };
 
   # hostname
-  networking.hostName = "slm-industries-flake";
+  networking = {
+   networkmanager.enable = true;
+   hostName = "t430-f-m-1";
+   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  };
+
   #--- set time zone
   time.timeZone = "Europe/Berlin";
 
@@ -96,19 +109,6 @@
   fonts.packages = with pkgs; [
     font-awesome
   ];
-
-  # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
-  users.users = {
-    slm = {
-      initialPassword = "slm";
-      isNormalUser = true;
-      openssh.authorizedKeys.keys = [
-        # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
-      ];
-      # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = ["wheel"];
-    };
-  };
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
@@ -128,8 +128,8 @@
     layout = "de";
     resolutions = [
       {
-        x = 1600;
-        y = 900;
+        x = 1920;
+        y = 1080;
       }
     ];
     windowManager.awesome.enable = true; #--- enable window manager
@@ -137,6 +137,24 @@
     xkbOptions = "caps:escape"; #--- map caps to escape
   };
 
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "23.11";
+  #--- shell environment
+  programs.vim.defaultEditor = true;
+  programs.zsh.enable = true;
+  programs.ssh.forwardX11 = true;
+
+  # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
+  users.users = {
+    slm = {
+      isNormalUser = true;
+      description = "Scott LaMott";
+      initialPassword = "x";
+      openssh.authorizedKeys.keys = [
+        # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
+      ];
+      # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
+      extraGroups = [ "networkmanager" "wheel" ];
+      # extraGroups = [ "networkmanager" "wheel" "jackaudio" ];
+    };
+  };
+
 }
