@@ -67,19 +67,26 @@
 
   # FIXME: Add the rest of your current configuration
 
-  # TODO: Set your hostname
   networking.hostName = "t430-fms";
 
-  # TODO: This is just an example, be sure to use whatever bootloader you prefer
+  #--- bootloader you prefer
   boot.loader.systemd-boot.enable = true;
 
-  # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
+  #--- select internationalisation properties
+  i18n.defaultLocale = "en_US.UTF-8";
+  console = {
+    font = "Lat2-Terminus16";
+    keyMap = "de";
+  };
+
+  #--- fonts
+  fonts.packages = with pkgs; [
+    font-awesome
+  ];
+
+  #--- user configuration
   users.users = {
-    # FIXME: Replace with your username
     slm = {
-      # TODO: You can set an initial password for your user.
-      # If you do, you can skip setting a root password by passing '--no-root-passwd' to nixos-install.
-      # Be sure to change it (using passwd) after rebooting!
       initialPassword = "x";
       isNormalUser = true;
       openssh.authorizedKeys.keys = [
