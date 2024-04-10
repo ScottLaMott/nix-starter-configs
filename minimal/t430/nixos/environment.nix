@@ -12,7 +12,6 @@
     abcde
     acpi
     alacritty
-    ansible
     bat
     brave
     brightnessctl

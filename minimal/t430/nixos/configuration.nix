@@ -21,8 +21,6 @@
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
     ./environment.nix
-    # ./zsh.nix
-    # ./modules/t460s/environment.nix
   ];
 
   nixpkgs = {
@@ -102,7 +100,8 @@
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
     font = "Lat2-Terminus16";
-    useXkbConfig = true; # use xkbOptions in tty.
+    keyMap = "de";
+    # useXkbConfig = true; # use xkbOptions in tty.
   };
 
   #--- fonts
@@ -123,19 +122,19 @@
   };
 
   #--- enable the X11 windowing system.
-  services.xserver = {
-    enable = true;
-    layout = "de";
-    resolutions = [
-      {
-        x = 1920;
-        y = 1080;
-      }
-    ];
-    windowManager.awesome.enable = true; #--- enable window manager
-    displayManager.lightdm.enable = true; #--- enable login manager
-    xkbOptions = "caps:escape"; #--- map caps to escape
-  };
+  # services.xserver = {
+  #   enable = true;
+  #   layout = "de";
+  #   resolutions = [
+  #     {
+  #       x = 1920;
+  #       y = 1080;
+  #     }
+  #   ];
+  #   windowManager.awesome.enable = true; #--- enable window manager
+  #   displayManager.lightdm.enable = true; #--- enable login manager
+  #   xkbOptions = "caps:escape"; #--- map caps to escape
+  # };
 
   #--- shell environment
   programs.vim.defaultEditor = true;
