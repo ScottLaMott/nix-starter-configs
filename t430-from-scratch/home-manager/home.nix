@@ -16,11 +16,13 @@
     # ./nvim.nix
     ./alacritty.nix
     ./fzf.nix
+    ./git.nix
     ./picom.nix
     ./rofi.nix
     ./tmux.nix
     ./vim.nix
     ./xdg.nix
+    # ./xsession.nix
     ./zsh.nix
   ];
 
