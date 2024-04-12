@@ -14,6 +14,14 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
+    ./alacritty.nix
+    ./fzf.nix
+    ./picom.nix
+    ./rofi.nix
+    ./tmux.nix
+    ./vim.nix
+    ./xdg.nix
+    ./zsh.nix
   ];
 
   nixpkgs = {
@@ -46,17 +54,19 @@
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
-  home.packages = with pkgs; [ 
+  home.packages = with pkgs; [
     cmatrix
     figlet
     lolcat
-    sl 
+    nitch
+    sl
     toilet
   ];
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
+  programs.vim.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

@@ -19,6 +19,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    ./environment.nix
     # Import home-manager's NixOS module
     inputs.home-manager.nixosModules.home-manager
   ];
@@ -67,10 +68,17 @@
 
   # FIXME: Add the rest of your current configuration
 
-  networking.hostName = "t430-fms";
+  #--- bootloader
+  boot.loader = {
+    grub.enable = true;
+    grub.device = "/dev/sda";
+  };
 
-  #--- bootloader you prefer
-  boot.loader.systemd-boot.enable = true;
+  #--- networking
+  networking= {
+    networkmanager.enable = true;
+    hostName = "t430-fms";
+  };
 
   #--- select internationalisation properties
   i18n.defaultLocale = "en_US.UTF-8";
@@ -84,6 +92,7 @@
     font-awesome
   ];
 
+  programs.zsh.enable = true;
   #--- user configuration
   users.users = {
     slm = {
@@ -93,7 +102,8 @@
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = ["wheel"];
+      extraGroups = [ "networkmanager" "wheel" ];
+      shell = pkgs.zsh;
     };
   };
 
@@ -107,6 +117,21 @@
       # Use keys only. Remove if you want to SSH using password (not recommended)
       PasswordAuthentication = false;
     };
+  };
+
+  #--- enable the X11 windowing system.
+  services.xserver = {
+    enable = true;
+    layout = "de";
+    resolutions = [
+      {
+        x = 1600;
+        y = 900;
+      }
+    ];
+    windowManager.awesome.enable = true; #--- enable window manager
+    displayManager.lightdm.enable = true; #--- enable login manager
+    xkbOptions = "caps:escape"; #--- map caps to escape
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
