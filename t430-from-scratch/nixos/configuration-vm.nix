@@ -77,7 +77,7 @@
   #--- networking
   networking= {
     networkmanager.enable = true;
-    hostName = "t430-fms";
+    hostName = "t430-fms-vm";
   };
 
   #--- set time zone
@@ -123,19 +123,19 @@
   };
 
   #--- enable the X11 windowing system.
-  services.xserver = {
-    enable = true;
-    layout = "de";
-    resolutions = [
-      {
-        x = 1600;
-        y = 900;
-      }
-    ];
-    windowManager.awesome.enable = true; #--- enable window manager
-    displayManager.lightdm.enable = true; #--- enable login manager
-    xkbOptions = "caps:escape"; #--- map caps to escape
-  };
+  # services.xserver = {
+  #   enable = true;
+  #   layout = "de";
+  #   resolutions = [
+  #     {
+  #       x = 1600;
+  #       y = 900;
+  #     }
+  #   ];
+  #   windowManager.awesome.enable = true; #--- enable window manager
+  #   displayManager.lightdm.enable = true; #--- enable login manager
+  #   xkbOptions = "caps:escape"; #--- map caps to escape
+  # };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
