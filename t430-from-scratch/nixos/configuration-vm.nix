@@ -68,6 +68,16 @@
 
   # FIXME: Add the rest of your current configuration
 
+  virtualisation.vmVariant = {
+    # following configuration is added only when building VM with build-vm
+    virtualisation = {
+      # memorySize =  2048; # Use 2048MiB memory.
+      # memorySize =  4096; # Use 2048MiB memory.
+      memorySize =  8192; # Use 2048MiB memory.
+      cores = 3;
+    };
+  };
+
   #--- bootloader
   boot.loader = {
     grub.enable = true;
@@ -126,15 +136,15 @@
   # services.xserver = {
   #   enable = true;
   #   layout = "de";
-  #   resolutions = [
-  #     {
-  #       x = 1600;
-  #       y = 900;
-  #     }
-  #   ];
-  #   windowManager.awesome.enable = true; #--- enable window manager
-  #   displayManager.lightdm.enable = true; #--- enable login manager
-  #   xkbOptions = "caps:escape"; #--- map caps to escape
+    # resolutions = [
+    #   {
+    #     x = 1600;
+    #     y = 900;
+    #   }
+    # ];
+    # windowManager.awesome.enable = true; #--- enable window manager
+    # displayManager.lightdm.enable = true; #--- enable login manager
+    # xkbOptions = "caps:escape"; #--- map caps to escape
   # };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
@@ -144,7 +154,7 @@
     extraSpecialArgs = { inherit inputs outputs; };
     users = {
       # Import your home-manager configuration
-      slm = import ../home-manager/home.nix;
+      slm = import ../home-manager/home-vm.nix;
     };
   };
 
