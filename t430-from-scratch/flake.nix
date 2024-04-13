@@ -34,6 +34,11 @@
         # > Our main nixos configuration file <
         modules = [./nixos/configuration.nix];
       };
+      t430-fms-vm = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        # > Our main nixos configuration file <
+        modules = [./nixos/configuration-vm.nix];
+      };
     };
 
     # Standalone home-manager configuration entrypoint
