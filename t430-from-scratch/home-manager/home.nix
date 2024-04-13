@@ -63,6 +63,12 @@
     nitch
     sl
     toilet
+    (nerdfonts.override {
+      fonts = [
+        "JetBrainsMono"
+        "Inconsolata"
+      ];
+    })
   ];
 
   # Enable home-manager and git
@@ -75,4 +81,7 @@
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.11";
+
+  xdg.configFile."awesome/rc.lua".source = ../dots/rc.lua;
+
 }
