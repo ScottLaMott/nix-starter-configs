@@ -3,6 +3,7 @@
 - Home-Manager als NixOS-Module
 
 #### Todo's
+- zsh aufruf extrem langsam
 - xserver in vm läuft nicht korrekt
   - alacritty startet, man sieht aber keinen Prompt, keine Eingabe und keine Ausgabe. 'exit`-Kommando beendet das Terminal
 - misterio77-minimal config in seperate Partition /dev/sda4 installieren
