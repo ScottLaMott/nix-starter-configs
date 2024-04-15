@@ -22,7 +22,7 @@
     ./tmux.nix
     ./vim.nix
     ./xdg.nix
-    # ./xsession.nix
+    ./xsession.nix
     ./zsh.nix
   ];
 
@@ -82,6 +82,6 @@
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.11";
 
-  xdg.configFile."awesome/rc.lua".source = ../dots/rc.lua;
+  # xdg.configFile."awesome/rc.lua".source = ../dots/rc.lua;
 
 }
