@@ -7,9 +7,10 @@
 
   xdg = {
     enable = true;
-    configFile."awesome/rc.lua".source = ../dots/awesome/rc.lua;
-    configFile."vim/settings.vim".source = ../dots/vim/settings.vim;
-    configFile."vim/maps.vim".source = ../dots/vim/maps.vim;
+    # configFile."awesome/rc.lua".source = ../dots/awesome/rc.lua;
+    configFile."awesome/rc.lua".source   = lib.mkForce ../dots/awesome/rc.lua;
+    configFile."vim/settings.vim".source = lib.mkForce ../dots/vim/settings.vim;
+    configFile."vim/maps.vim".source     = lib.mkForce ../dots/vim/maps.vim;
   };
 
 }

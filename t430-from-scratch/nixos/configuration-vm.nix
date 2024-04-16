@@ -71,8 +71,6 @@
   virtualisation.vmVariant = {
     # following configuration is added only when building VM with build-vm
     virtualisation = {
-      # memorySize =  2048; # Use 2048MiB memory.
-      # memorySize =  4096; # Use 2048MiB memory.
       memorySize =  8192; # Use 2048MiB memory.
       cores = 3;
     };
@@ -116,8 +114,7 @@
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = [ "networkmanager" "wheel" ];
-      shell = pkgs.bash;
-      # shell = pkgs.zsh;
+      shell = pkgs.zsh;
     };
   };
 

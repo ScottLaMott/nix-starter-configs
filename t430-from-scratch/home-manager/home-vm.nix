@@ -17,7 +17,7 @@
     ./alacritty.nix
     ./fzf.nix
     ./git.nix
-    ./picom.nix
+    # ./picom.nix # FIXME: 
     ./rofi.nix
     ./tmux.nix
     ./vim.nix
@@ -62,6 +62,7 @@
     lolcat
     nitch
     sl
+    termshark
     toilet
     (nerdfonts.override {
       fonts = [

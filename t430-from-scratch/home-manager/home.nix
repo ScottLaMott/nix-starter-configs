@@ -60,8 +60,11 @@
     cmatrix
     figlet
     lolcat
+    mixxx
     nitch
     sl
+    soco-cli
+    termshark
     toilet
   ];
 
