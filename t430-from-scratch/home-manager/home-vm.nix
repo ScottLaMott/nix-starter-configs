@@ -62,7 +62,6 @@
     lolcat
     nitch
     sl
-    termshark
     toilet
     (nerdfonts.override {
       fonts = [

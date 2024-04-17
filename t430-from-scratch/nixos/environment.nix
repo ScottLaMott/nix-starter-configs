@@ -61,6 +61,7 @@
     sshpass
     sxiv
     tcpdump
+    termshark
     tig
     tio
     tmux-xpanes
