@@ -5,6 +5,7 @@
   lib,
   config,
   pkgs,
+  nix-colors,
   ...
 }: {
   # You can import other home-manager modules here
@@ -24,7 +25,10 @@
     ./xdg.nix
     # ./xsession.nix
     ./zsh.nix
+    nix-colors.homeManagerModules.default
   ];
+
+  colorScheme = nix-colors.colorSchemes.dracula;
 
   nixpkgs = {
     # You can add overlays here
