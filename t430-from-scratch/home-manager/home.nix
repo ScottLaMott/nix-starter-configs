@@ -28,7 +28,15 @@
     nix-colors.homeManagerModules.default
   ];
 
-  colorScheme = nix-colors.colorSchemes.dracula;
+  # colorScheme = nix-colors.colorSchemes.dracula;
+  # colorScheme = nix-colors.colorSchemes.atlas;
+  # colorScheme = nix-colors.colorSchemes.gruvbox-dark-hard;
+  # colorScheme = nix-colors.colorSchemes.brogrammer;
+  # colorScheme = nix-colors.colorSchemes.ocean;
+  # colorScheme = nix-colors.colorSchemes.nord;
+  colorScheme = nix-colors.colorSchemes.icy;
+  # colorScheme = nix-colors.colorSchemes.papercolor-dark;
+  # colorScheme = nix-colors.colorSchemes.onedark;
 
   nixpkgs = {
     # You can add overlays here
@@ -74,7 +82,6 @@
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
-  programs.git.enable = true;
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

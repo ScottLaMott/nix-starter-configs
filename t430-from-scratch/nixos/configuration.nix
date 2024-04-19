@@ -20,8 +20,9 @@
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
     ./environment.nix
+    
     # Import home-manager's NixOS module
-    inputs.home-manager.nixosModules.home-manager
+    # inputs.home-manager.nixosModules.home-manager # FIXME: wird nicht gebraucht bei stand alone home manager ???
   ];
 
   nixpkgs = {
@@ -140,12 +141,13 @@
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
 
-  home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
-    users = {
-      # Import your home-manager configuration
-      slm = import ../home-manager/home.nix;
-    };
-  };
+  # FIXME: wird nicht gebraucht bei stand alone home manager ???
+  # home-manager = {
+  #   extraSpecialArgs = { inherit inputs outputs; };
+  #   users = {
+  #     # Import your home-manager configuration
+  #     slm = import ../home-manager/home.nix;
+  #   };
+  # };
 
 }
