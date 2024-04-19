@@ -28,14 +28,15 @@
     nix-colors.homeManagerModules.default
   ];
 
+  #--- colorScheme
   # colorScheme = nix-colors.colorSchemes.dracula;
+  colorScheme = nix-colors.colorSchemes.pasque;
   # colorScheme = nix-colors.colorSchemes.atlas;
   # colorScheme = nix-colors.colorSchemes.gruvbox-dark-hard;
   # colorScheme = nix-colors.colorSchemes.brogrammer;
   # colorScheme = nix-colors.colorSchemes.ocean;
-  # colorScheme = nix-colors.colorSchemes.nord;
   # colorScheme = nix-colors.colorSchemes.icy;
-  colorScheme = nix-colors.colorSchemes.brogrammer;
+  # colorScheme = nix-colors.colorSchemes.brogrammer;
   # colorScheme = nix-colors.colorSchemes.ocean;
   # colorScheme = nix-colors.colorSchemes.nord;
   # colorScheme = nix-colors.colorSchemes.icy;
