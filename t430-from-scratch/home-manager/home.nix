@@ -34,7 +34,11 @@
   # colorScheme = nix-colors.colorSchemes.brogrammer;
   # colorScheme = nix-colors.colorSchemes.ocean;
   # colorScheme = nix-colors.colorSchemes.nord;
-  colorScheme = nix-colors.colorSchemes.icy;
+  # colorScheme = nix-colors.colorSchemes.icy;
+  colorScheme = nix-colors.colorSchemes.brogrammer;
+  # colorScheme = nix-colors.colorSchemes.ocean;
+  # colorScheme = nix-colors.colorSchemes.nord;
+  # colorScheme = nix-colors.colorSchemes.icy;
   # colorScheme = nix-colors.colorSchemes.papercolor-dark;
   # colorScheme = nix-colors.colorSchemes.onedark;
 
