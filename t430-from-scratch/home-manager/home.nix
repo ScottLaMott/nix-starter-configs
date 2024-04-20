@@ -75,12 +75,14 @@
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
     cmatrix
+    cava
     figlet
     lolcat
     mixxx
     nitch
     sl
     soco-cli
+    spotify-tui
     termshark
     toilet
   ];

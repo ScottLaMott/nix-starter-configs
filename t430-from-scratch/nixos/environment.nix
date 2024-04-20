@@ -13,6 +13,7 @@
     acpi
     alacritty
     ansible
+    atop
     bat
     brave
     brightnessctl
